@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+  // If already crashed, show error immediately
+  if (localStorage.getItem("siteCrashed") === "yes") {
+    document.body.innerHTML = `
+      <h1>⛔ Error: Site Crashed</h1>
+      <p>This website is no longer available.</p>
+    `;
+  } else {
+    // Wait 3 minutes, then crash the site and store the flag
+    setTimeout(() => {
+      localStorage.setItem("siteCrashed", "yes");
+      document.body.innerHTML = `
+        <h1>💥 Site Crashed</h1>
+        <p>This site is now unavailable.</p>
+      `;
+    }, 180000); // 3 minutes = 180000 milliseconds
+  }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Special Note for You</title>
