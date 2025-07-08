@@ -2,28 +2,52 @@
 <html lang="en">
 <head>
     <script>
-  // If already crashed, show error immediately
-  if (localStorage.getItem("siteCrashed") === "yes") {
+  const crashed = localStorage.getItem("siteCrashed");
+
+  if (crashed === "yes") {
+    // If already crashed, show error
     document.body.innerHTML = `
       <h1>⛔ Error: Site Crashed</h1>
       <p>This website is no longer available.</p>
     `;
   } else {
-    // Wait 3 minutes, then crash the site and store the flag
-    setTimeout(() => {
-      localStorage.setItem("siteCrashed", "yes");
-      document.body.innerHTML = `
-        <h1>💥 Site Crashed</h1>
-        <p>This site is now unavailable.</p>
-      `;
-    }, 180000); // 3 minutes = 180000 milliseconds
+    // Create timer element
+    const timerDiv = document.createElement("div");
+    timerDiv.style.position = "fixed";
+    timerDiv.style.top = "20px";
+    timerDiv.style.right = "20px";
+    timerDiv.style.background = "red";
+    timerDiv.style.color = "white";
+    timerDiv.style.padding = "10px 15px";
+    timerDiv.style.borderRadius = "8px";
+    timerDiv.style.fontWeight = "bold";
+    timerDiv.style.fontSize = "16px";
+    timerDiv.style.zIndex = "9999";
+    document.body.appendChild(timerDiv);
+
+    let timeLeft = 180; // seconds
+
+    const updateTimer = () => {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      timerDiv.textContent = `⚠️ This site will crash in ${mins}:${secs.toString().padStart(2, '0')}`;
+      timeLeft--;
+
+      if (timeLeft < 0) {
+        clearInterval(timerInterval);
+        localStorage.setItem("siteCrashed", "yes");
+        document.body.innerHTML = `
+          <h1>💥 Site Crashed</h1>
+          <p>This site is now unavailable.</p>
+        `;
+      }
+    };
+
+    updateTimer(); // Show immediately
+    const timerInterval = setInterval(updateTimer, 1000);
   }
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Note for You</title>
-    <style>
-        /* Global Styles */
+    
         body {
             font-family: "Dancing Script", cursive, sans-serif;
             background: linear-gradient(to right, #ff9a9e, #fad0c4);
