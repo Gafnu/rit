@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,62 +14,64 @@
             padding: 0;
             margin: 0;
             line-height: 1.5;
-        }/* Header Style */
-    h1 {
-        color: #ff6f61;
-        font-size: 2em;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+            user-select: none; /* Prevent text selection */
+        }
 
-    /* Paragraph Style */
-    p {
-        font-size: 1.2em;
-        margin: 10px auto;
-        max-width: 90%;
-    }
-
-    /* Card Container */
-    .card {
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin: 20px auto;
-        width: 90%;
-        box-sizing: border-box;
-    }
-
-    /* Footer Style */
-    footer {
-        margin-top: 20px;
-        font-size: 0.85em;
-        padding: 10px 0;
-    }
-
-    /* Link Style */
-    a {
-        color: #ff6f61;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    /* Larger Screens */
-    @media (min-width: 768px) {
+        /* Header Style */
         h1 {
-            font-size: 2.5em;
+            color: #ff6f61;
+            font-size: 2em;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        p {
-            font-size: 1.5em;
-            max-width: 600px;
-        }
-        .card {
-            width: 600px;
-        }
-    }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
+        /* Paragraph Style */
+        p {
+            font-size: 1.2em;
+            margin: 10px auto;
+            max-width: 90%;
+        }
+
+        /* Card Container */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        /* Footer Style */
+        footer {
+            margin-top: 20px;
+            font-size: 0.85em;
+            padding: 10px 0;
+        }
+
+        /* Link Style */
+        a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Larger Screens */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1.5em;
+                max-width: 600px;
+            }
+            .card {
+                width: 600px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Hello, <strong>[Ritu...]</strong>!</h1>
@@ -82,8 +85,46 @@
     <footer>
         <p></p>
         <p><a href="#"><strong>[😊]</strong></a></p>
-0        <p>W<a href="https://instagram.com/gafnu07" target="_blank">[Chat]</a>.</p>
-    <P>SORRY but I am a bit introvert ,,,,I also want to borrow your Physics copy😅 </P>,,after completing i will return it
+        <p>W<a href="https://instagram.com/gafnu07" target="_blank">[Chat]</a>.</p>
+        <p>SORRY but I am a bit introvert ,,,,I also want to borrow your Physics copy😅 </p>
     </footer>
+
+    <!-- Anti-screenshot JS -->
+    <script>
+      // Disable right-click
+      document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        alert("Screenshot or copying is disabled.");
+      });
+
+      // Block DevTools keys
+      document.onkeydown = function(e) {
+        if (
+          e.key === "F12" || 
+          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || 
+          (e.ctrlKey && e.key === "U")
+        ) {
+          alert("Developer tools are disabled.");
+          return false;
+        }
+      };
+
+      // Attempt to block PrintScreen
+      document.addEventListener("keyup", function(e) {
+        if (e.key === "PrintScreen") {
+          navigator.clipboard.writeText("Screenshot blocked!");
+          alert("Screenshots are blocked!");
+        }
+      });
+
+      // Optional: Blur screen when tab not visible
+      document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+          document.body.style.filter = "blur(10px)";
+        } else {
+          document.body.style.filter = "none";
+        }
+      });
+    </script>
 </body>
 </html>
