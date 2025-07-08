@@ -1,186 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script>
-  const crashed = localStorage.getItem("siteCrashed");
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>A Special Note for You</title>  
+  <style>  
+    body {  
+      font-family: "Dancing Script", cursive, sans-serif;  
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);  
+      color: #333;  
+      text-align: center;  
+      padding: 0;  
+      margin: 0;  
+      line-height: 1.5;  
+    }
 
-  if (crashed === "yes") {
-    // If already crashed, show error
-    document.body.innerHTML = `
-      <h1>⛔ Error: Site Crashed</h1>
-      <p>This website is no longer available.</p>
-    `;
-  } else {
-    // Create timer element
-    const timerDiv = document.createElement("div");
-    timerDiv.style.position = "fixed";
-    timerDiv.style.top = "20px";
-    timerDiv.style.right = "20px";
-    timerDiv.style.background = "red";
-    timerDiv.style.color = "white";
-    timerDiv.style.padding = "10px 15px";
-    timerDiv.style.borderRadius = "8px";
-    timerDiv.style.fontWeight = "bold";
-    timerDiv.style.fontSize = "16px";
-    timerDiv.style.zIndex = "9999";
-    document.body.appendChild(timerDiv);
+    h1 {  
+      color: #ff6f61;  
+      font-size: 2em;  
+      margin-top: 20px;  
+      margin-bottom: 20px;  
+    }
 
-    let timeLeft = 180; // seconds
+    p {  
+      font-size: 1.2em;  
+      margin: 10px auto;  
+      max-width: 90%;  
+    }
 
-    const updateTimer = () => {
-      const mins = Math.floor(timeLeft / 60);
-      const secs = timeLeft % 60;
-      timerDiv.textContent = `⚠️ This site will crash in ${mins}:${secs.toString().padStart(2, '0')}`;
-      timeLeft--;
+    .card {  
+      background: white;  
+      padding: 20px;  
+      border-radius: 15px;  
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+      margin: 20px auto;  
+      width: 90%;  
+      box-sizing: border-box;  
+    }
 
-      if (timeLeft < 0) {
-        clearInterval(timerInterval);
-        localStorage.setItem("siteCrashed", "yes");
-        document.body.innerHTML = `
-          <h1>💥 Site Crashed</h1>
-          <p>This site is now unavailable.</p>
-        `;
-      }
-    };
+    footer {  
+      margin-top: 20px;  
+      font-size: 0.85em;  
+      padding: 10px 0;  
+    }
 
-    updateTimer(); // Show immediately
-    const timerInterval = setInterval(updateTimer, 1000);
-  }
-    </script>
-    
-        <body> {
-            font-family: "Dancing Script", cursive, sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            color: #333;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            line-height: 1.5;
-            user-select: none; /* Prevent text selection */
-        }
+    a {  
+      color: #ff6f61;  
+      text-decoration: none;  
+      font-weight: bold;  
+    }
 
-        /* Header Style */
-        h1 {
-            color: #ff6f61;
-            font-size: 2em;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    @media (min-width: 768px) {  
+      h1 { font-size: 2.5em; }  
+      p { font-size: 1.5em; max-width: 600px; }  
+      .card { width: 600px; }  
+    }
 
-        /* Paragraph Style */
-        p {
-            font-size: 1.2em;
-            margin: 10px auto;
-            max-width: 90%;
-        }
+    /* Timer badge */
+    #timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ff6f61;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 1000;
+    }
+  </style>  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">  
+</head>  
+<body>  
+  <h1>Hello, <strong>[Ritu...]</strong>!</h1>  
+  <div class="card">  
+    <p>.You know in whole class I am able to understand your writting only 🌸</p>  
+    <p>That's why I borrowed your chemistry notebook </p>  
+    <p>.I just want to thank you for your notebook.</p>  
+    <p> <strong>Thank you</strong>.</p>  
+  </div>  
+  <footer>  
+    <p><a href="#"><strong>[😊]</strong></a></p>  
+    <p><a href="https://instagram.com/gafnu07" target="_blank">[Chat]</a>.</p>  
+    <p>SORRY but I am a bit introvert ,,,,I also want to borrow your Physics copy 😅 </p>
+  </footer>
 
-        /* Card Container */
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            width: 90%;
-            box-sizing: border-box;
-        }
-
-        /* Footer Style */
-        footer {
-            margin-top: 20px;
-            font-size: 0.85em;
-            padding: 10px 0;
-        }
-
-        /* Link Style */
-        a {
-            color: #ff6f61;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Larger Screens */
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-            p {
-                font-size: 1.5em;
-                max-width: 600px;
-            }
-            .card {
-                width: 600px;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Hello, <strong>[Ritu...]</strong>!</h1>
-    <div class="card">
-        <p>.Thanks for your chemistry copy 🌸</p>
-        <p>Actually your writing is very similar to mine That's why i borrowed your chemistry notebook </p>
-        <p>..</p>
-        <p></p>
-        <p> <strong>Thank you</strong>.</p>
-    </div>
-    <footer>
-        <p></p>
-        <p><a href="#"><strong>[😊]</strong></a></p>
-        <p>SORRY but I am a bit introvert ,,,,I also want to borrow your Physics copy😅 </p>
-    </footer>
-    <a href="https://www.instagram.com/gafnu07" target="_blank" style="text-decoration: none;">
-  <button style="
-    padding: 12px 24px;
-    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  ">
-    📷 Follow me on Instagram
-  </button>
-    </a>
-
-    <!-- Anti-screenshot JS -->
-    <script>
-      // Disable right-click
-      document.addEventListener("contextmenu", function(e) {
+  <!-- Anti Screenshot + Timer/Crash Script -->
+  <script>
+    // Anti Screenshot / Print / Save
+    document.addEventListener("keydown", function(e) {
+      if (
+        e.key === "PrintScreen" || 
+        (e.ctrlKey && (e.key === 'p' || e.key === 's' || e.key === 'u'))
+      ) {
         e.preventDefault();
-        alert("Screenshot or copying is disabled.");
-      });
+        alert("Screenshot/Save is disabled.");
+      }
+    });
 
-      // Block DevTools keys
-      document.onkeydown = function(e) {
-        if (
-          e.key === "F12" || 
-          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || 
-          (e.ctrlKey && e.key === "U")
-        ) {
-          alert("Developer tools are disabled.");
-          return false;
+    // Disable right-click
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    // Timer + Crash logic
+    const crashed = localStorage.getItem("siteCrashed");
+    if (crashed === "yes") {
+      document.body.innerHTML = `
+        <h1>⛔ Error: Site Crashed</h1>
+        <p>This website is no longer available.</p>
+      `;
+    } else {
+      // Add timer to screen
+      const timerDiv = document.createElement("div");
+      timerDiv.id = "timer";
+      document.body.appendChild(timerDiv);
+
+      let timeLeft = 120; // 2 minutes in seconds
+
+      const updateTimer = () => {
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        timerDiv.textContent = `⏳ Crashing in ${mins}:${secs.toString().padStart(2, '0')}`;
+        timeLeft--;
+
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          localStorage.setItem("siteCrashed", "yes");
+          document.body.innerHTML = `
+            <h1>💥 Site Crashed</h1>
+            <p>This site is now unavailable.</p>
+          `;
         }
       };
 
-      // Attempt to block PrintScreen
-      document.addEventListener("keyup", function(e) {
-        if (e.key === "PrintScreen") {
-          navigator.clipboard.writeText("Screenshot blocked!");
-          alert("Screenshots are blocked!");
-        }
-      });
-
-      // Optional: Blur screen when tab not visible
-      document.addEventListener("visibilitychange", function() {
-        if (document.hidden) {
-          document.body.style.filter = "blur(10px)";
-        } else {
-          document.body.style.filter = "none";
-        }
-      });
-    </script>
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+    }
+  </script>
 </body>
 </html>
