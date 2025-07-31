@@ -89,7 +89,7 @@
     // Disable right-click
     document.addEventListener("contextmenu", e => e.preventDefault());
 
-    const crashDuration =  0* 2 * 1000; // 2 minutes
+    const crashDuration =  0* 0 * 2; // 2 sec
     const crashed = localStorage.getItem("siteCrashed");
 
     if (crashed === "yes") {
