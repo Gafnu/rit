@@ -1,72 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>A Special Note for You</title>  
-  <style>  
-    body {  
-      font-family: "Dancing Script", cursive, sans-serif;  
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);  
-      color: #333;  
-      text-align: center;  
-      padding: 0;  
-      margin: 0;  
-      line-height: 1.5;  
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Connector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .website-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .website-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Website Connector</h1>
+        <p>Your gateway to our connected platforms</p>
+    </header>
 
-    h1 {  
-      color: #ff6f61;  
-      font-size: 2em;  
-      margin-top: 20px;  
-      margin-bottom: 20px;  
-    }
+    <div class="container">
+        <div class="website-card">
+            <h2>Past</h2>
+            <p>Description of the first website you want to connect to.</p>
+            <a href="https://www.websiteone.com" class="btn" target="_blank">Visit Website One</a>
+        </div>
 
-    p {  
-      font-size: 1.2em;  
-      margin: 10px auto;  
-      max-width: 90%;  
-    }
+        <div class="website-card">
+            <h2>Present</h2>
+            <p>Description of the second website you want to connect to.</p>
+            <a href="https://www.websitetwo.com" class="btn" target="_blank">Visit Website Two</a>
+        </div>
+    </div>
 
-    .card {  
-      background: white;  
-      padding: 20px;  
-      border-radius: 15px;  
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
-      margin: 20px auto;  
-      width: 90%;  
-      box-sizing: border-box;  
-    }
-
-    footer {  
-      margin-top: 20px;  
-      font-size: 0.85em;  
-      padding: 10px 0;  
-    }
-
-    a {  
-      color: #ff6f61;  
-      text-decoration: none;  
-      font-weight: bold;  
-    }
-
-    @media (min-width: 768px) {  
-      h1 { font-size: 2.5em; }  
-      p { font-size: 1.5em; max-width: 600px; }  
-      .card { width: 600px; }  
-    }
-  </style>  
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">  
-</head>  
-<body>  
-  <h1>Hello, <strong>[Ritu...]</strong>!</h1>  
-  <div class="card">  
-    <p>Thanks for your Chemistry notebook 🌸</p>  
-    <p>Actually your writing is very similar to mine That's why I borrowed your chemistry notebook.</p>  
-    <p></p>  
-    <p><strong>Thank you</strong>.</p>  
-    <p style="font-weight:600; color:#555;">SORRY but I am a bit introvert... I also want to borrow your Physics copy 😅</p>
-    <!-- Countdown timer will appear here -->
+    <footer>
+        <p>&copy; 2023 Website Connector. All rights reserved.</p>
+    </footer>
+</body>
   </div>  
 
   <footer>  
@@ -138,3 +154,4 @@
   </script>
 </body>
 </html>
+
